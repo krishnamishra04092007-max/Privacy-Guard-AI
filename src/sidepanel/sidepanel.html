@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Guard AI</title>
+  <link rel="stylesheet" href="sidepanel.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-group">
+        <div class="logo-badge">🛡️</div>
+        <div>
+          <h1>Privacy Guard AI</h1>
+          <p class="subtitle">Intelligent Legal Terms & Privacy Auditor</p>
+        </div>
+      </div>
+      <div class="status-indicator" id="ai-badge" title="Powered by Google Gemini 2.5 Flash">
+        <span class="dot"></span> Gemini 2.5 Flash
+      </div>
+    </header>
+
+    <!-- Scan Bar / Trigger -->
+    <section class="action-card">
+      <button id="scan-btn" class="primary-btn">
+        <span class="btn-icon">⚡</span> Scan Active Page
+      </button>
+      <div id="page-info" class="page-info">Open any Terms or Privacy Policy page and click Scan</div>
+    </section>
+
+    <!-- Analysis Status Tracker -->
+    <div id="loading-card" class="card hidden">
+      <div class="progress-header">
+        <span id="loading-status">Auditing clauses with Gemini AI...</span>
+        <span id="loading-percent" class="pulse-indicator">●</span>
+      </div>
+      <div class="progress-track">
+        <div id="progress-bar" class="progress-fill indeterminate"></div>
+      </div>
+      <small class="muted-text">Zero-shot structured classification in progress</small>
+    </div>
+
+    <!-- Safety Score Gauge Card -->
+    <section class="card score-section">
+      <div class="score-container">
+        <div class="gauge-wrapper">
+          <svg viewBox="0 0 100 100" class="gauge-svg">
+            <circle class="gauge-bg" cx="50" cy="50" r="42" />
+            <circle id="gauge-fill" class="gauge-progress" cx="50" cy="50" r="42" />
+          </svg>
+          <div class="gauge-text">
+            <span id="score-val" class="score-number">--</span>
+            <span class="score-label">SAFETY SCORE</span>
+          </div>
+        </div>
+        <div class="score-meta">
+          <div id="risk-rating" class="badge-status">Awaiting Scan</div>
+          <p id="score-summary" class="score-detail">Scans active legal terms using Graphify AST analysis and Gemini 2.5 Flash.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Graph Visualizer Section -->
+    <section class="card">
+      <div class="section-title">
+        <span>🕸️ Legal Knowledge Graph</span>
+        <span id="graph-stats" class="pill-count">0 nodes</span>
+      </div>
+      <p class="muted-text">Graphify AST dependency mapping between clauses and user rights.</p>
+      <div id="graph-container" class="graph-canvas-container">
+        <svg id="graph-svg" width="100%" height="220"></svg>
+      </div>
+    </section>
+
+    <!-- Red-Flag Risk Matrix -->
+    <section class="card">
+      <div class="section-title">
+        <span>🚩 Red-Flag Risk Matrix</span>
+        <span id="risk-count" class="pill-count">0 Detected</span>
+      </div>
+      <div id="clause-list" class="clause-list">
+        <div class="empty-state">No scan results yet. Open any legal document and click "Scan Active Page".</div>
+      </div>
+    </section>
+  </div>
+
+  <script type="module" src="ui.js"></script>
+</body>
+</html>

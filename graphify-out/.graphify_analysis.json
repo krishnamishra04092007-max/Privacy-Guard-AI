@@ -1,0 +1,84 @@
+{
+  "communities": {
+    "0": [
+      "src_assets_hero",
+      "src_assets_javascript",
+      "src_assets_vite",
+      "src_counter",
+      "src_counter_setupcounter",
+      "src_main",
+      "src_style"
+    ],
+    "1": [
+      "package",
+      "package_name",
+      "package_private",
+      "package_type",
+      "package_version",
+      "ref_vite"
+    ],
+    "2": [
+      "package_scripts",
+      "package_scripts_build",
+      "package_scripts_dev",
+      "package_scripts_preview"
+    ],
+    "3": [
+      "package_devdependencies",
+      "package_devdependencies_vite"
+    ]
+  },
+  "cohesion": {
+    "0": 0.3333333333333333,
+    "1": 0.3333333333333333,
+    "2": 0.5,
+    "3": 1.0
+  },
+  "gods": [
+    {
+      "id": "package_scripts",
+      "label": "scripts",
+      "degree": 4
+    },
+    {
+      "id": "src_counter_setupcounter",
+      "label": "setupCounter()",
+      "degree": 2
+    },
+    {
+      "id": "package_private",
+      "label": "private",
+      "degree": 1
+    },
+    {
+      "id": "package_scripts_dev",
+      "label": "dev",
+      "degree": 1
+    },
+    {
+      "id": "package_scripts_build",
+      "label": "build",
+      "degree": 1
+    },
+    {
+      "id": "package_scripts_preview",
+      "label": "preview",
+      "degree": 1
+    },
+    {
+      "id": "package_devdependencies_vite",
+      "label": "vite",
+      "degree": 1
+    },
+    {
+      "id": "ref_vite",
+      "label": "vite",
+      "degree": 1
+    }
+  ],
+  "surprises": [],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}

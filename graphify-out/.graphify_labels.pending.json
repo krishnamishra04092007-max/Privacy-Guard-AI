@@ -1,0 +1,14 @@
+{
+  "0": "main.js",
+  "1": "package.json",
+  "2": "ui.js",
+  "3": "LegalKnowledgeGraph",
+  "4": "manifest.json",
+  "5": "scripts",
+  "6": "content.js",
+  "7": "graph_viewer.js",
+  "8": "background.js",
+  "9": "gemini.js",
+  "10": "analysis/prefilter.js",
+  "11": "content.js"
+}
