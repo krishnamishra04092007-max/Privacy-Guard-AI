@@ -5,11 +5,11 @@
  */
 
 export const CATEGORY_PENALTIES = {
-  // Critical constitutional / litigation waivers
+  // Litigation & arbitration waivers
   "Civil Litigation Waivers": {
-    baseHigh: 30,
+    baseHigh: 20,
     baseMedium: 15,
-    maxCap: 40
+    maxCap: 25
   },
   // Data monetization, selling, tracking
   "Aggressive Data Monetization": {
@@ -17,17 +17,23 @@ export const CATEGORY_PENALTIES = {
     baseMedium: 12,
     maxCap: 35
   },
-  // Broad intellectual property claims
+  // Broad intellectual property expropriation
   "Perpetual IP Claims": {
-    baseHigh: 20,
-    baseMedium: 10,
-    maxCap: 30
+    baseHigh: 25,
+    baseMedium: 12,
+    maxCap: 35
   },
   // Auto-renewals, unilateral policy changes
   "Surprise Financial Mechanics": {
     baseHigh: 15,
     baseMedium: 8,
-    maxCap: 25
+    maxCap: 20
+  },
+  // Policy changes
+  "Unilateral Modification": {
+    baseHigh: 12,
+    baseMedium: 6,
+    maxCap: 15
   }
 };
 

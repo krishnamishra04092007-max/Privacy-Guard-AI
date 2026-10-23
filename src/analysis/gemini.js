@@ -37,18 +37,20 @@ Evaluate the following text from a Terms of Service or Privacy Policy.
 GOAL: Accurately isolate truly predatory provisions while never mischaracterizing standard, fair, or developer-friendly terms.
 
 BENIGN / NON-PREDATORY TERMS (DO NOT FLAG THESE):
-1. Standard monthly/annual SaaS recurring subscriptions with accessible cancel-anytime terms (e.g. "renew until cancelled. You may cancel at any time").
-2. User Content Retention: Terms guaranteeing that the user retains ownership and the company will NOT train AI models on user code/content.
-3. Bring-Your-Own-Client or MCP (Model Context Protocol) tool integrations (e.g. connecting Claude, Cursor, or IDE plugins).
-4. Standard warranty disclaimers ("as is") and routine limitation of liability capped at fees paid in the preceding 12 months.
-5. Standard confidentiality, encryption, and GDPR/CCPA data export/deletion rights.
+1. User Feedback / Suggestions: Standard clauses stating that suggestions or feedback sent to the company about the website or services become the company's property or can be used without royalty. DO NOT confuse website feedback with user-created code, hackathon submissions, or user projects.
+2. User Content Ownership: Terms guaranteeing that users retain ownership over their own code, creative works, hackathon projects, or files.
+3. Standard monthly/annual SaaS recurring subscriptions with accessible cancel-anytime terms (e.g. "renew until cancelled. You may cancel at any time").
+4. Bring-Your-Own-Client or MCP (Model Context Protocol) tool integrations (e.g. connecting Claude, Cursor, or IDE plugins).
+5. Standard warranty disclaimers ("as is") and routine limitation of liability capped at fees paid in the preceding 12 months.
+6. Standard confidentiality, encryption, and GDPR/CCPA data export/deletion rights.
+7. Routine terms updates reflecting changes to law or service features with published revision dates.
 
 ONLY EXTRACT GENUINELY PREDATORY CLAUSES:
-- "Civil Litigation Waivers": Forced binding arbitration or class action waivers denying access to legal courts.
+- "Civil Litigation Waivers": Forced binding arbitration or class action waivers denying access to legal courts. Note: Class action waivers / mandatory individual arbitration are typically MEDIUM risk unless coupled with extreme venue or cost-shifting penalties.
 - "Aggressive Data Monetization": Selling, brokering, or sharing personal biometrics, telemetry, or user content with third-party ad networks without explicit opt-in.
-- "Perpetual IP Claims": Irrevocable, perpetual, royalty-free, transferable licenses granting the platform broad commercial or sublicensing rights over original user creations or code.
+- "Perpetual IP Claims": Irrevocable, perpetual, royalty-free, transferable licenses granting the platform broad commercial or sublicensing rights over original user content, code, or hackathon projects. DO NOT flag standard suggestions/feedback clauses under this category!
 - "Surprise Financial Mechanics": Unilateral price alterations without prior notice, hidden renewal traps without cancellation instructions, or non-disclosed recurring fees.
-- "Unilateral Modification": Reserving the unilateral right to rewrite terms or revoke user rights at any time in "sole discretion" without advance written notice.
+- "Unilateral Modification": Reserving the arbitrary right to retroactively rewrite terms or revoke paid user access at any time in "sole discretion" without notice.
 
 CRITICAL INSTRUCTION:
 - If the agreement contains ONLY standard business terms, user ownership protections, or benign subscriptions, return an EMPTY clauses array:
