@@ -18,9 +18,9 @@ export function getGeminiApiKey() {
 }
 
 const CANDIDATE_MODELS = [
+  "gemini-3.1-flash-lite",
   "gemini-3.5-flash",
   "gemini-3-flash-preview",
-  "gemini-3.1-flash-lite",
   "gemini-flash-latest"
 ];
 
@@ -90,11 +90,16 @@ ${typeof clausesOrText === 'string' ? clausesOrText.slice(0, 15000) : JSON.strin
       const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
       console.log(`[Privacy Guard AI] Running legal verification on: ${model}`);
 
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 12000);
+
       const response = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(requestBody)
+        body: JSON.stringify(requestBody),
+        signal: controller.signal
       });
+      clearTimeout(timeoutId);
 
       if (!response.ok) {
         const errorText = await response.text();
